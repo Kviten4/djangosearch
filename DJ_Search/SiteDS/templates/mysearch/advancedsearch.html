@@ -1,0 +1,52 @@
+{% extends "mysearch/layout.html" %}
+{% load static %}
+    {% block title%}
+        <title>Advanced Search</title>
+    {% endblock %}
+
+    {% block body%}
+        <div class="navbar">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'imagesearch' %}">Images</a>
+        </div>
+        <div class="border">
+            <label>Advanced search</label>      
+        </div>
+        <div class="mainform">
+            <form class="form" action="https://google.com/search" method="GET" name="f">
+                    <div class="mainlabel">
+                        <label class="lb1a">Find pages with...</label>
+                        <label class="lb3">To do this in the search box</label>
+                    </div>
+                    <div class="rows">
+                        <label for="as_q" class="lb1">all these words:</label>
+                        <input class="lb2" type="text" name="as_q">
+                        <label class="lb3">Type the important words: <i>tricolor rat terrier</i></label>
+                    </div>
+                    <div class="rows">
+                        <label class="lb1">this exact word or phrase:</label>
+                        <input class="lb2" type="text" name="as_epq">
+                        <label class="lb3">Put exact words in quotes: <i>"rat terrier"</i></label>
+                    </div>
+                    <div class="rows">
+                        <label class="lb1">any of these words:</label>
+                        <input class="lb2" type="text" name="as_oq">
+                        <label class="lb3">Type OR between all the words you want: <i>miniature OR standard</i></label>
+                    </div>
+                    <div class="rows">
+                        <label class="lb1">none of these words:</label>
+                        <input class="lb2" type="text" name="as_eq">
+                        <label class="lb3">Put a minus sign just before words you don't want: <i>-rodent, -"Jack Russell"</i></label>
+                    </div>
+                    <div class="rows">
+                        <div class="lb1">  
+                        </div>
+                        <div id="lb2b">
+                            <button id="abvsearch" = type="submit" value="Advanced Search">Advanced search</button>
+                        </div> 
+                        <div class="lb3">  
+                        </div>
+                    </div>    
+            </form>
+        </div>
+    {% endblock %}

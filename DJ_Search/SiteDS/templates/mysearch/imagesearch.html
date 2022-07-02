@@ -1,0 +1,25 @@
+{% extends "mysearch/layout.html" %}
+{% load static %}
+    {% block title%}
+        <title>Search Images</title>
+    {% endblock %}
+    
+    {% block body%}
+        <div class="navbar">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'advancedsearch' %}">Advanced search</a>
+        </div>
+        <div class="searchfield">      
+            <img id=logoimage src="{% static 'mysearch/img/Google_Images_logo.png' %}">
+            <form action="https://google.com/search">
+                <div class="quaryform">
+                    <img id=lupa src="{% static 'mysearch/img/lupa.png' %}"> 
+                    <input class="quary" type="text" name="q">
+                </div>
+                <div class=buttons>
+                    <input type="submit" value="Search Images">
+                    <input type="hidden" name="tbm" value="isch"> 
+                </div>   
+            </form>           
+        </div>
+    {% endblock %}
